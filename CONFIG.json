@@ -2,5 +2,12 @@
   "general": {
     "title": "2D ray casting pygame",
     "color": [35, 35, 35]
+  },
+  "player": {
+    "radius":16,
+    "color": [255, 255, 255],
+    "speed": 5,
+    "x position": 284,
+    "y position": 284
   }
 }
