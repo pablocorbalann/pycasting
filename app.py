@@ -1,6 +1,7 @@
 import pygame
 import json
 from src.player import Player
+from src.walls import Walls
 
 pygame.init()
 def load_configuration():
@@ -21,7 +22,7 @@ def main():
     pygame.display.set_caption(CONFIGURATION['general']['title'])
     # sprites
     player = Player(CONFIGURATION["player"])
-
+    walls = Walls(CONFIGURATION["walls"])
     # game loop of the app
     running = True
     while running:
@@ -50,6 +51,7 @@ def main():
         # update
         screen.fill(CONFIGURATION['general']['color'])
         player.draw(screen)
+        walls.draw(screen)
         player.check_borders(SIZE)
         player.update()
         pygame.display.flip()
