@@ -43,6 +43,7 @@ class Game:
         # create the screen for the game
         self.screen = pygame.display.set_mode(SIZE) 
         pygame.display.set_caption(self.conf['general']['title'])
+        pygame.display.set_icon(pygame.image.load(self.conf['general']['logo route']))
         # load all the walls from the configuration file and store
         # them in the self.walls list using the Limits() class
         wall_color = self.conf['walls']['color']

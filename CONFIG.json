@@ -1,7 +1,8 @@
 {
   "general": {
     "title": "2D ray casting pygame",
-    "color": [60, 60, 60]
+    "color": [60, 60, 60],
+    "logo route": "images/logo.png"
   },
   "player": {
     "radius": 20,
