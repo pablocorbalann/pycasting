@@ -31,7 +31,7 @@ class Ray:
     THis class manages the Rays of the player to then
     display them and check the cordenates.
     """
-    def __init__(self, x, y,radius):
+    def __init__(self, x, y, radius):
         """
         This is the constructor method for the Ray class. It uses 
         parameters for creating the attributes.
@@ -44,6 +44,7 @@ class Ray:
         self.position = [x, y]
         # get the direction of the ray
         self.direction = array([cos(radius), sin(radius)])
+
 
     def display(self, screen):
         """

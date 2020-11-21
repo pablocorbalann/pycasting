@@ -9,8 +9,8 @@ from ray import *
 from particle import *
 
 # Global constants
-WIDTH = 800
-HEIGHT = 800
+WIDTH = 600
+HEIGHT = 600
 SIZE = (WIDTH, HEIGHT)
 
 def load_configuration():
@@ -61,6 +61,7 @@ class Game:
         # clock for the pygame fps
         self.fps = 60 # max fps
         self.clock = pygame.time.Clock()
+        self.player_position = [self.conf['player']['x position'], self.conf['player']['y position']]
 
     def draw(self):
         """
@@ -73,6 +74,7 @@ class Game:
             # iter the draws and then draw them
             wall.display(self.screen)
         self.particle.display(self.screen)
+        pygame.draw.circle(self.screen, self.conf['player']['color'], self.player_position, self.conf['player']['radius'])
 
 
     def run(self):
@@ -90,9 +92,9 @@ class Game:
                     self.running = False # stop the game
                 elif event.type == pygame.MOUSEMOTION:
                     # get the mouse position and update the particle
-                    position = event.pos
-                    self.particle.pos[0] = position[0]
-                    self.particle.pos[1] = position[1]
+                    self.player_position = event.pos
+                    self.particle.position[0] = self.player_position[0]
+                    self.particle.position[1] = self.player_position[1]
             # draw all the things needed
             self.particle.look(self.screen,self.walls)
             self.draw()
