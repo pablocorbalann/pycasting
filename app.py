@@ -43,17 +43,9 @@ class Game:
         # create the screen for the game
         self.screen = pygame.display.set_mode(SIZE) 
         pygame.display.set_caption(self.conf['general']['title'])
-        #Random walls
-        self.walls = [] 
-        for i in range(5):
-            x1 = np.random.randint(0,WIDTH) 
-            y1 = np.random.randint(0, HEIGHT)
-            x2 = np.random.randint(0, WIDTH)
-            y2 = np.random.randint(0, HEIGHT)
-            x3 = np.random.randint(0, WIDTH)
-            y3 = np.random.randint(0, HEIGHT)
-            self.walls.append(Limits(x1,y1,x2,y2))
-
+        self.walls = []
+        for wall in self.conf['walls']['walls']:
+            self.walls.append(Limits(wall[0][0], wall[0][1], wall[1][0], wall[1][1]))
         self.walls.append(Limits(0,0,WIDTH,0))
         self.walls.append(Limits(0, 0, 0, HEIGHT))
         self.walls.append(Limits(0, HEIGHT, WIDTH, HEIGHT))
@@ -88,12 +80,13 @@ class Game:
             self.screen.fill(self.conf['general']['color'])
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
-                    self.stopgame = True
-                #mouse position
-                if event.type == pygame.MOUSEMOTION:
-                    pos = event.pos
-                    self.particle.pos[0] = pos[0]
-                    self.particle.pos[1] = pos[1]
+                    self.running = False # stop the game
+                elif event.type == pygame.MOUSEMOTION:
+                    # get the mouse position and update the particle
+                    position = event.pos
+                    self.particle.pos[0] = position[0]
+                    self.particle.pos[1] = position[1]
+            # draw all the things needed
             self.particle.look(self.screen,self.walls)
             self.draw()
             self.clock.tick(100)
