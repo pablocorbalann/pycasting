@@ -8,12 +8,28 @@ import pygame
 
 
 class Limits:
-    def __init__(self, x1, y1, x2, y2):
-        self.a = [x1, y1]
-        self.b = [x2, y2]
+    """
+    The limit class manages all the limits (or walls)
+    for the app
+    """
+    def __init__(self, start, end, color, width):
+        """
+        This is the constructor method, from here all the attributes
+        of the class are created.
+
+        Parameters:
+            start => The start position
+            end => The end position
+            color => The color  of the line
+            width => The width of the line
+        """
+        self.start = start
+        self.end = end
+        self.color = color
+        self.width = width
 
     def display(self, screen):
-        pygame.draw.line(screen, (255, 255, 255), self.a, self.b, 2)
+        pygame.draw.line(screen, self.color, self.start, self.end,  self.width)
 
 
 class Ray:
@@ -32,11 +48,11 @@ class Ray:
 
     def cast(self, wall):
         # start point
-        x1 = wall.a[0]
-        y1 = wall.a[1]
+        x1 = wall.start[0]
+        y1 = wall.start[1]
         # end point
-        x2 = wall.b[0]
-        y2 = wall.b[1]
+        x2 = wall.end[0]
+        y2 = wall.end[1]
 
         #position of the ray
         x3 = self.pos[0]

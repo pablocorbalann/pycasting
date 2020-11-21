@@ -1,7 +1,7 @@
 {
   "general": {
     "title": "2D ray casting pygame",
-    "color": [35, 35, 35]
+    "color": [60, 60, 60]
   },
   "player": {
     "radius":16,
@@ -11,12 +11,12 @@
     "y position": 284
   },
   "ray": {
-    "color": [176, 255, 251],
+    "color": [255, 220, 107],
     "width": 2
   },
   "walls": {
     "width": 4,
-    "color": [200, 50, 50],
+    "color": [15, 15, 15],
     "walls": [
       [[50, 50], [550, 50]],
       [[50, 50], [50, 200]],

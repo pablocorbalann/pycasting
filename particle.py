@@ -9,11 +9,13 @@ from ray import *
 
 
 class Particle:
-    def __init__(self):
+    def __init__(self, conf):
         self.pos = array([250, 250])
+        self.color = conf['color']
+        self.width = conf['width']
 
     def display(self, screen):
-        pygame.draw.circle(screen, (255, 255, 255), self.pos, 1, 1)
+        pygame.draw.circle(screen, self.color, self.pos, 1, self.width)
 
         for ray in self.rays:
             ray.display(screen)
@@ -22,7 +24,6 @@ class Particle:
         self.rays = []
         for i in range(0, 360, 4):
             self.rays.append(Ray(self.pos[0], self.pos[1], deg2rad(i)))
-
         for ray in self.rays:
             closest = 10000000
             closestpt = None
@@ -36,4 +37,4 @@ class Particle:
                         closestpt = pt
 
             if closestpt is not None:
-                pygame.draw.line(screen, (255, 255, 255), self.pos, array(closestpt, int), 2)
+                pygame.draw.line(screen, self.color, self.pos, array(closestpt, int), self.width)

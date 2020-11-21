@@ -43,16 +43,23 @@ class Game:
         # create the screen for the game
         self.screen = pygame.display.set_mode(SIZE) 
         pygame.display.set_caption(self.conf['general']['title'])
+        # load all the walls from the configuration file and store
+        # them in the self.walls list using the Limits() class
+        wall_color = self.conf['walls']['color']
+        wall_width = self.conf['walls']['width']
         self.walls = []
         for wall in self.conf['walls']['walls']:
-            self.walls.append(Limits(wall[0][0], wall[0][1], wall[1][0], wall[1][1]))
-        self.walls.append(Limits(0,0,WIDTH,0))
-        self.walls.append(Limits(0, 0, 0, HEIGHT))
-        self.walls.append(Limits(0, HEIGHT, WIDTH, HEIGHT))
-        self.walls.append(Limits(WIDTH, 0, WIDTH, HEIGHT))
-        self.particle = Particle()
+            self.walls.append(Limits(wall[0], wall[1], wall_color, wall_width))
+        # walls for avoiding render of rays outsite the screen
+        self.walls.append(Limits((0, 0), (WIDTH, 0), self.conf['general']['color'], wall_width))
+        self.walls.append(Limits((0, 0), (0, HEIGHT), self.conf['general']['color'], wall_width))
+        self.walls.append(Limits((0, HEIGHT), (WIDTH, HEIGHT), self.conf['general']['color'] , wall_width))
+        self.walls.append(Limits((WIDTH, 0), (WIDTH, HEIGHT), self.conf['general']['color'], wall_width))
+        self.particle = Particle(self.conf['ray'])
         # Flag variable used to stop the game
         self.running = True
+        # clock for the pygame fps
+        self.fps = 60 # max fps
         self.clock = pygame.time.Clock()
 
     def draw(self):
@@ -89,7 +96,7 @@ class Game:
             # draw all the things needed
             self.particle.look(self.screen,self.walls)
             self.draw()
-            self.clock.tick(100)
+            self.clock.tick(self.fps)
             pygame.display.update()
 
 
