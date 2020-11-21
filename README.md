@@ -59,3 +59,17 @@ These lists represent Cartesian coordinates, in a plane a segment has a start po
 ]
 ```
 <p align="center"><img src="images/cartesian-plane.gif" alt="..."></p>
+
+###### Segment in a full cartesian plane
+
+In our game we **consider that** `{a, b} ∈ N`.
+
+---
+
+### About RayCasting
+
+The so-called RayCasting is a technique designed to **solve multiple problems in ray tracing to an object by simulating natural light rays**. In RayCasting a ray is traced from a point `a` to a point `a + 1` as long as this ray does not collide with any obstacle.
+
+Taking this into account, we can launch rays that advance in a certain direction. These rays will never stop moving unless they hit an obstacle.
+
+
