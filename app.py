@@ -5,8 +5,8 @@
 import numpy as np
 import json
 import pygame 
-from ray import *
-from particle import *
+from src.ray import *
+from src.particle import *
 
 # Global constants
 WIDTH = 600

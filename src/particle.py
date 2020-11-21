@@ -1,6 +1,6 @@
 import pygame
 from numpy import array, linalg, deg2rad
-from ray import *
+from src.ray import *
 
 class Particle:
     """
