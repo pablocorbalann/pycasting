@@ -14,7 +14,7 @@ If you want to use the web in your computer, you should follow this steps.
 ##### Steps
 ###### Clone the repository in your local machine
 ```shell
-git clone https://github.com/PabloCorbCon/2d-raycast.git
+git clone https://github.com/PabloCorbCon/pycasting.git
 ```
 ###### Move inside the repository
 ```shell
