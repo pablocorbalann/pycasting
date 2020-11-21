@@ -33,6 +33,7 @@ python app.py
 python3 app.py
 ```
 
+#### For contributing to the project read the [CONTRIBUTING.md](https://github.com/PabloCorbCon/2d-raycast/blob/main/CONTRIBUTING.md) file
 ---
 
 ### Configuration
@@ -72,4 +73,31 @@ The so-called RayCasting is a technique designed to **solve multiple problems in
 
 Taking this into account, we can launch rays that advance in a certain direction. These rays will never stop moving unless they hit an obstacle.
 
+Techniques as complex as Envidia RTX can be simplified to the maximum with a two-dimensional demonstration like the one in this repository. After all, Ray tracing is based on bouncing light rays with the most light-like properties possible against solid objects.
 
+<p align="center"><img src="images/rtx-explication.png" alt="..."></p>
+
+When a casting beam detects an obstacle, it can **produce a signal**, this could be used for countless purposes such as improving the physics of a simulator or even improving the layout of lasers in a game. The possibilities are endless. To check the distance of the ray to an object, you can use **any mathematical equation**. In this project we use the **Euclidean distance** formula to calculate the distance.
+
+
+<p align="center"><img src="images/euclidean-1.png" alt="..."></p>
+
+---
+
+#### This project is under the Apache 2.0 [License](https://github.com/PabloCorbCon/2d-raycast/blob/main/LICENSE)
+```
+Copyright 2020 - @pablocorbcon
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+```
+##### Read more [here](https://www.apache.org/licenses/LICENSE-2.0)
