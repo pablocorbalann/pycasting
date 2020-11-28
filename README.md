@@ -1,5 +1,5 @@
 <p align="center"><img src="images/logo.png" width="75px" alt="..."></p>
-<h1 align="center">2D Raycasting</h1>
+<h1 align="center" color="yellow">2D Raycasting</h1>
 <h3 align="center"> Implementation of a 2D raycasting algorithm using Pygame</h3>
 <p align="center"><img alt="Hex.pm" src="https://img.shields.io/hexpm/l/plug?color=yellow&label=LICENSE&style=for-the-badge"></p>
 
