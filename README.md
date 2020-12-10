@@ -3,6 +3,8 @@
 <h3 align="center"> Implementation of a 2D raycasting algorithm using Pygame</h3>
 <p align="center"><img alt="Hex.pm" src="https://img.shields.io/hexpm/l/plug?color=yellow&label=LICENSE&style=for-the-badge"></p>
 
+### Check the [Pycasting demonstration short video](https://youtu.be/_oKXL-X-ufc)
+
 ---
 
 ### Using the app
